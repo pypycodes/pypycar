@@ -131,7 +131,7 @@ private fun RideCard(ride: Ride, onRide: (Ride) -> Unit) {
             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Box(Modifier.size(34.dp).background(Color(0xFFD9F0EC), RoundedCornerShape(17.dp)), contentAlignment = Alignment.Center) { Text(ride.driver.name.take(1), color = Teal, fontWeight = FontWeight.Bold) }
                 Text(ride.driver.name, fontWeight = FontWeight.Medium)
-                Icon(Icons.Default.Verified, null, tint = Teal, Modifier.size(17.dp))
+                Icon(Icons.Default.Verified, null, Modifier.size(17.dp), tint = Teal)
                 Text("★ ${ride.driver.rating}", color = Color(0xFFB77900))
                 Spacer(Modifier.weight(1f))
                 Text("${ride.availableSeats} seats left", color = Teal, fontWeight = FontWeight.Medium)
