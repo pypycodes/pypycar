@@ -1,4 +1,4 @@
-package com.piyucar.app
+package com.pypycar.app
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -52,7 +52,7 @@ import androidx.compose.ui.unit.sp
 private val Teal = Color(0xFF0F766E)
 
 @Composable
-fun PiyuCarApp() {
+fun PypycarApp() {
     var tab by remember { mutableIntStateOf(0) }
     var selectedRide by remember { mutableStateOf<Ride?>(null) }
     var showOffer by remember { mutableStateOf(false) }
@@ -95,7 +95,7 @@ private fun HomeScreen(modifier: Modifier, onRide: (Ride) -> Unit, onPost: () ->
     val rides = if (searching) SampleData.rides.filter { it.from.contains(from, true) && it.to.contains(to, true) } else SampleData.rides
     Column(modifier.fillMaxSize().background(Color(0xFFF7FAF9))) {
         Column(Modifier.padding(horizontal = 20.dp, vertical = 18.dp)) {
-            Text("PiyuCar", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Teal)
+            Text("pypycar", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Teal)
             Text("Share the journey. Share the joy.", color = Color(0xFF60716D))
             Spacer(Modifier.height(20.dp))
             Card(colors = CardDefaults.cardColors(containerColor = Color.White), shape = RoundedCornerShape(18.dp)) {

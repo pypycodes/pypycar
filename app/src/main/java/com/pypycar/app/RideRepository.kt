@@ -1,4 +1,4 @@
-package com.piyucar.app
+package com.pypycar.app
 
 class RideRepository(initialRides: List<Ride> = SampleData.rides) {
     private val rides = initialRides.toMutableList()

@@ -16,5 +16,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PiyuCar"
+rootProject.name = "pypycar"
 include(":app")

@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: PiyuCar API
+  title: pypycar API
   version: 1.0.0
-  description: AWS-ready contract for the PiyuCar community carpool MVP.
+  description: AWS-ready contract for the pypycar community carpool MVP.
 servers:
   - url: https://api.example.com/v1
 paths:

@@ -1,9 +1,9 @@
-package com.piyucar.app
+package com.pypycar.app
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.lightColorScheme
 
-val PiyuColors = lightColorScheme(
+val PypycarColors = lightColorScheme(
     primary = Color(0xFF0F766E),
     onPrimary = Color.White,
     secondary = Color(0xFFEAA21A),

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.piyucar.app"
+    namespace = "com.pypycar.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.piyucar.app"
+        applicationId = "com.pypycar.app"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
