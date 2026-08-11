@@ -59,6 +59,12 @@ def get_rides(event):
     return response(200, {"rides": items})
 
 
+def get_ride(event):
+    ride_id = event.get("pathParameters", {}).get("rideId")
+    item = RIDES.get_item(Key={"rideId": ride_id}).get("Item")
+    return response(200, item) if item else response(404, {"message": "Ride not found"})
+
+
 def create_ride(event):
     driver = user_id(event)
     payload = body(event)
@@ -181,6 +187,8 @@ def lambda_handler(event, context):
     path = event.get("rawPath", "")
     if method == "GET" and path == "/rides":
         return get_rides(event)
+    if method == "GET" and path.startswith("/rides/"):
+        return get_ride(event)
     if method == "POST" and path == "/rides":
         return create_ride(event)
     if method == "POST" and "/bookings" in path and "/rides/" in path:
