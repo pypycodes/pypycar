@@ -41,7 +41,16 @@ After applying:
 terraform output -raw api_url
 ```
 
-Set the resulting value as the GitHub repository variable `PYPYCAR_API_URL`. The Android workflow passes it to Gradle and embeds it in the APK's `BuildConfig.API_BASE_URL`.
+Set the resulting value as the GitHub Actions repository secret `PYPYCAR_API_URL`. The Android workflow reads it from `secrets.PYPYCAR_API_URL`, passes it to Gradle, and embeds it in the APK's `BuildConfig.API_BASE_URL`.
+
+In GitHub, go to **Settings → Secrets and variables → Actions → Secrets → New repository secret** and create:
+
+```text
+Name:  PYPYCAR_API_URL
+Value: https://<api-id>.execute-api.us-east-1.amazonaws.com
+```
+
+Note that the API URL is not a credential. It will still be visible inside the installed APK because the app must know where to connect. The secret only prevents the URL from being exposed in the repository and workflow configuration.
 
 ## Destroy
 
