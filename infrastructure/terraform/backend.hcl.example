@@ -1,0 +1,7 @@
+# Pass this file to `terraform init` after creating the state bucket in the Platform account.
+# The bucket name must be globally unique.
+bucket         = "pypycar-terraform-state-ACCOUNT_ID"
+region         = "us-east-1"
+profile        = "pypycar-platform"
+use_lockfile   = true
+encrypt        = true

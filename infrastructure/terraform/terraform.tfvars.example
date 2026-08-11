@@ -1,0 +1,10 @@
+aws_region = "us-east-1"
+project_name = "pypycar"
+environment = "dev"
+
+# Optional when your current AWS identity is in the Platform account.
+# workload_role_arn = "arn:aws:iam::<WORKLOAD_ACCOUNT_ID>:role/pypycar-terraform-deployment"
+
+# Add mobile/web callback URLs when Cognito hosted UI is introduced.
+cognito_callback_urls = []
+cognito_logout_urls   = []
