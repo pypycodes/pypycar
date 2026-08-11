@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: PiyuCar API
+  version: 1.0.0
+  description: AWS-ready contract for the PiyuCar community carpool MVP.
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /rides:
+    get:
+      summary: Search available rides
+      parameters:
+        - {name: from, in: query, required: true, schema: {type: string}}
+        - {name: to, in: query, required: true, schema: {type: string}}
+        - {name: date, in: query, required: true, schema: {type: string, format: date}}
+      responses: {'200': {description: Matching rides}}
+    post:
+      summary: Publish a ride
+      security: [{bearerAuth: []}]
+      responses: {'201': {description: Ride created}}
+  /rides/{rideId}/bookings:
+    post:
+      summary: Reserve passenger seats atomically
+      security: [{bearerAuth: []}]
+      parameters: [{name: rideId, in: path, required: true, schema: {type: string}}]
+      responses:
+        '201': {description: Booking confirmed}
+        '409': {description: Not enough seats available}
+  /bookings:
+    get:
+      summary: List current user's bookings
+      security: [{bearerAuth: []}]
+      responses: {'200': {description: Bookings}}
+components:
+  securitySchemes:
+    bearerAuth: {type: http, scheme: bearer}
